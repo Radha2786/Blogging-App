@@ -7,12 +7,12 @@ const posts = [
         author: "Radha",
         desc: "If you're a dessert enthusiast like me, there's a good chance you're always on the lookout for the next sweet delight to satisfy your cravings. Well, look no further because today, I'm sharing a recipe for a dessert that's nothing short of pure bliss – Chocolate Lava Cakes.These little gems are renowned for their warm, oozing chocolate center that's a true delight for the senses. Whether you're hosting a dinner party or simply treating yourself, this dessert is a showstopper. Let's dive into how to make this delectable treat.",
     },
-    // {
-    //     title: "Technology News",
-    //     img: "https://img.freepik.com/free-vector/news-concept-landing-page_52683-10026.jpg?size=626&ext=jpg&uid=R121432296&ga=GA1.1.1160756614.1697645143&semt=ais",
-    //     author: "dolly",
-    //     desc: "If you're a dessert enthusiast like me, there's a good chance you're always on the lookout for the next sweet delight to satisfy your cravings. Well, look no further because today, I'm sharing a recipe for a dessert that's nothing short of pure bliss – Chocolate Lava Cakes. These little gems are renowned for their warm, oozing chocolate center that's a true delight for the senses. Whether you're hosting a dinner party or simply treating yourself, this dessert is a showstopper. Let's dive into how to make this delectable treat."
-    // },
+    {
+        title: "Technology News",
+        img: "https://img.freepik.com/free-vector/news-concept-landing-page_52683-10026.jpg?size=626&ext=jpg&uid=R121432296&ga=GA1.1.1160756614.1697645143&semt=ais",
+        author: "dolly",
+        desc: "If you're a dessert enthusiast like me, there's a good chance you're always on the lookout for the next sweet delight to satisfy your cravings. Well, look no further because today, I'm sharing a recipe for a dessert that's nothing short of pure bliss – Chocolate Lava Cakes. These little gems are renowned for their warm, oozing chocolate center that's a true delight for the senses. Whether you're hosting a dinner party or simply treating yourself, this dessert is a showstopper. Let's dive into how to make this delectable treat."
+    },
     {
         title: "Earn money online ",
         img: "https://img.freepik.com/premium-vector/businessman-sitting-big-money-coins-finance-success-money-wealth_194360-190.jpg",

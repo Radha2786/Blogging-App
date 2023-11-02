@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&family=Nunito:ital,wght@0,300;1,500&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;1,500&family=Young+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Inter:wght@600&family=Nunito:ital,wght@0,300;1,500&display=swap');
+
+.navigation {
+    height: 65px;
+    background-color: rgb(235, 218, 246);
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font2);
+    align-items: center;
+    /* border: 2px solid black; */
+}
+
+.nav-left {
+    display: flex;
+    font-family: var(--font3);
+}
+
+
+.logo {
+    margin-left: 4px;
+    font-size: 28px;
+}
+
+.nav-left ul {
+    display: flex;
+    margin: 0 77px;
+    /* padding-bottom: 23px; */
+    align-items: center;
+    font-size: 21px;
+}
+
+.nav-left ul li {
+    list-style: none;
+    margin: 0 14px;
+    font-family: var(--font1);
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-left ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.nav-left ul li a:hover {
+    color: var(--main-bg-color);
+    font-weight: bolder;
+}
+
+
+:root {
+    --main-bg-color: #bd6418;
+    --font1: 'Inter', sans-serif;
+    --font2: 'Young Serif', serif;
+    --font3: 'Agbalumo'
+}
+
+.max-width-1 {
+    max-width: 80vw;
+}
+
+.max-width-2 {
+    max-width: 60vw;
+}
+
+.m-auto {
+    margin: auto;
+}
+
+.font1 {
+    font-family: var(--font1);
+}
+
+.font2 {
+    font-family: var(--font2);
+}
+
+.btn {
+    margin: 5px;
+    padding: 0px 20px;
+    /* border: 2px solid black; */
+    border-radius: 4px;
+    padding-top: 3px;
+    font-family: var(--font1);
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn:hover {
+    color: white;
+    background: var(--main-bg-color);
+}
+
+.form-input {
+    margin: 0px 13px;
+    padding: 0px 5px;
+    padding-top: 3px;
+    font-size: 16px;
+    /* border: 2px solid black; */
+    border-radius: 4px;
+    font-family: var(--font1);
+}
+
+.my-2 {
+    margin-top: 25px;
+    /* margin-bottom: 32px; */
+}

@@ -9,7 +9,7 @@ const blogSchema = new mongoose.Schema({
         type:String,
         trim:true
     } ,
-    Author: {
+    author: {
         type:String,
         trim:true
     },

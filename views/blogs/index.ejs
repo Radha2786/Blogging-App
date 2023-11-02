@@ -1,0 +1,68 @@
+<% layout('layouts/boilerplate') -%>
+    <%- include('../partials/navbar.ejs') %>
+
+        <div class="content max-width-1 m-auto my-2">
+            <div class="content-left">
+                <h1>Stay curious.</h1>
+                <p class="sub-heading">Discover stories, thinking, and expertise from writers on any topic.</p>
+                <p>So, grab your magic wand, and let’s explore some exciting project ideas that will help you level up
+                    your
+                    backend programming skills and embark on the path to becoming a senior-level developer
+                    longer care and a persistent October of the Northern California wildfires.
+                    isn’t there more than enough of that going around? Maybe all of us can pretend that Halloween isn’t
+                    even
+                    happening this year?.</p>
+
+            </div>
+            <div class="content-right">
+                <!-- <img src="img/home.jpg"> -->
+                <img src="https://img.freepik.com/free-vector/net-surfing-cartoon-character-sitting-big-laptop-looking-some-information-internet-media-file-geolocation-hashtag_335657-338.jpg?size=626&ext=jpg&ga=GA1.1.1889174288.1697701306&semt=sph"
+                    alt="">
+            </div>
+
+        </div>
+        <div class="max-width-1 m-auto">
+            <hr>
+        </div>
+
+
+        <div class="home-articles max-width-1 m-auto font2 my-2">
+            <h2>Featured Articles</h2>
+            <% for(let blog of items){ %>
+                <div class="home-article">
+                    <div class="home-article-img">
+                        <img src="<%=blog.img%>" alt="">
+                    </div>
+                    <div class="home-article-content">
+                        <h3>
+                            <%=blog.desc.substring(0,100)%>
+                        </h3>
+                        <span>
+                            <%=blog.author%>
+                        </span>
+                        <span>07 January | 6 min read</span>
+                    </div>
+
+
+                </div>
+                <% } %>
+
+        </div>
+        <!-- ------------------------------------- -->
+        <!-- <ul>
+            <% for(let blog of items){ %>
+                <li>
+                    <h3>
+                        <%=blog.title%>
+                    </h3>
+                    <img src="<%=blog.img%>" alt="">
+
+                    <h5>
+                        <%=blog.author%>
+                    </h5>
+                    <p>
+                        <%=blog.desc%>
+                    </p>
+                </li>
+                <% } %>
+        </ul> -->
