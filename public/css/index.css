@@ -125,3 +125,6 @@ h1 {
     position: relative;
     left: 453px;
 }
+.threebuttons{
+  display: flex;
+}

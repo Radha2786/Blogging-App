@@ -1,10 +1,27 @@
-
-
 <% layout('layouts/boilerplate') -%>
 
 
-<nav class="navigation  max-width-1 m-auto">
-    <div class="nav-left">
+    <nav class="navigation">
+        <div class="heading">
+            <h1>MyBlogs</h1>
+        </div>
+        <div class="nav-items">
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact Us</a></li>
+                <li><a href="">Account</a></li>
+            </ul>
+        </div>
+        <div class="nav-options d-flex">
+            <input type="text" placeholder="Search Here" class="px-2"> <button class="btn" style="background-color: blueviolet; color: white;     margin: 0;
+        border-radius: 0px 5px 5px 0px;" type="submit">Search</button>
+            <a href="/blogs/new">
+                <button title="Add Blogs" class="btn" type="submit"><img
+                        src="https://img.icons8.com/ios/50/8A2BE2/add--v1.png" alt="add--v1" /></button>
+            </a>
+        </div>
+        <!-- <div class="nav-left">
         <span class="logo">MyBlog</span>
         <ul>
             <li><a class="/index.html">Home</a></li>
@@ -16,5 +33,7 @@
     <div class="nav-right">
         <input class="form-input" type="text" placeholder="Article Search">
         <button class="btn">Search</button>
-    </div>
-</nav>
+         <input class="form-input" type="text" placeholder="Add Item">
+        <button class="btn">Add</button>
+    </div> -->
+    </nav>

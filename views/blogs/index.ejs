@@ -35,34 +35,40 @@
                     </div>
                     <div class="home-article-content">
                         <h3>
-                            <%=blog.desc.substring(0,100)%>
+                            <%=blog.title%>
                         </h3>
+                        <p>
+                            <%=blog.desc.substring(0,100)%>
+                        </p>
                         <span>
                             <%=blog.author%>
                         </span>
                         <span>07 January | 6 min read</span>
+                        <!-- <a href="/blogs/<%=blog._id%>">
+                            <button class="btn btn-sm " style="background-color: rgb(231, 165, 95);">Read More</button>
+                        </a> -->
+                        <div class="threebuttons">
+                            <a href="/blogs/<%=blog._id%>/edit">
+                                <button class="btn btn-sm " style="background-color: rgb(231, 165, 95); ">Edit
+                                    Blog</button>
+                            </a>
+                            <form action="/blogs/<%=blog._id%>/?_method=DELETE" method="POST">
+                                    <button class="btn btn-sm " style="background-color: rgb(231, 165, 95);">Delete</button>
+                                
+                            </form>
+                           
+                            <a href="/blogs/<%=blog._id%>">
+                                <button class="btn btn-sm " style="background-color: rgb(231, 165, 95);">Read
+                                    More</button>
+                            </a>
+                        </div>
+
+
                     </div>
+
 
 
                 </div>
                 <% } %>
 
         </div>
-        <!-- ------------------------------------- -->
-        <!-- <ul>
-            <% for(let blog of items){ %>
-                <li>
-                    <h3>
-                        <%=blog.title%>
-                    </h3>
-                    <img src="<%=blog.img%>" alt="">
-
-                    <h5>
-                        <%=blog.author%>
-                    </h5>
-                    <p>
-                        <%=blog.desc%>
-                    </p>
-                </li>
-                <% } %>
-        </ul> -->

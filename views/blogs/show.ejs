@@ -1,0 +1,43 @@
+<% layout('layouts/boilerplate') %>
+    <%- include('../partials/navbar') %>
+
+
+
+
+        <div class="home-article container1">
+
+            <div class="home-article-content container2">
+                <h3>
+                    <%=foundblog.title%>
+                </h3>
+                <!-- <p>
+                <%=foundblog.desc%>
+            </p> -->
+                <span>
+                    By: <%=foundblog.author%>
+                </span>
+                <span>07 January | 6 min read</span>
+                <div class="review">
+                    <!-- <a href="/">
+                    <button title="review" class="btn" type="submit"><img src="https://cdn-icons-png.flaticon.com/128/2462/2462719.png" alt="review" style="width: 2rem;"> </button>
+                </a> -->
+                <!-- <a> -->
+                    <!-- <button title="like" class="btn"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI59bqI-VJfW1-U_N5RcGFde1ouI25n5yUotPf0nc&s" style="width: 2rem;"></button> -->
+                <!-- </a> -->
+                </div>
+                <div class="rudy1">
+
+                    <div class="rudy">
+                        <div class="home-article-img ">
+                            <img src="<%=foundblog.img%>" alt="">
+                        </div>
+
+                        <p>
+                            <%=foundblog.desc%>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>

@@ -1,0 +1,29 @@
+<% layout('layouts/boilerplate') %>
+    <%- include('../partials/navbar') %>
+
+        <div class="row mt-3em;">
+            <div class="col-6 mx-auto">
+                <form action="/blogs" method="POST">
+                    <div class="mb-3">
+                        <label for="Title">Title: </label>
+                        <input type="text" id="Title" class="form-control" name="title" placeholder="Title of the blog" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Img" >Image: </label>
+                        <input type="text" id="Img" class="form-control" name="img" placeholder="Image of the blog" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Author" class="form-label">Author: </label>
+                        <input type="text" id="Author" class="form-control" name="author" placeholder="Author of the blog" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="Desc">Description: </label>
+                        <textarea id="Desc" name="desc" placeholder="Description of the blog" rows="5" cols="100" required></textarea>
+                    </div>
+                    <button class="btn btn-sm btn-success" type="submit">Add Blog</button>
+
+                </form>
+
+            </div>
+
+        </div>
