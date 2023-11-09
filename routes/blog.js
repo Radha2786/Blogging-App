@@ -27,7 +27,7 @@ router.get('/blogs/:id', async(req,res)=>{
     // console.log('inside show route');
     const {id}= req.params;
     // console.log(id);
-    let foundblog = await Blog.findById(id);
+    let foundblog = await Blog.findById(id).populate('reviews');
     res.render('blogs/show',{foundblog});
 })
 

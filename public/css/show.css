@@ -49,3 +49,37 @@ font-size: 2.5rem;
     background-color: white;
     background: none;
 }
+.rudy{
+    border-bottom: 1px solid gray;
+}
+.fa-comment{
+    margin-left: 13px;
+}
+
+.sub-comment-section{
+    margin-top: -2em;
+}
+.fa-ellipsis{
+padding-left: 8px;
+}
+
+.form {
+    width: 40vw;
+    color: blueviolet;
+    border-top: 1px solid gray;
+    display: none;
+   
+}
+
+.form h2{
+    margin-top: 1.5em;
+}
+
+#showFormIcon{
+    cursor:pointer;
+}
+.carddiv{
+    width: 40vw;
+    color: blueviolet;
+  
+}

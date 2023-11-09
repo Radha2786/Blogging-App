@@ -1,11 +1,12 @@
 const express = require('express');
 const app = express();
-const port = 8080;
+const port = 8000;
 const path = require('path');
 // let ejs = require('ejs');
 const mongoose = require('mongoose');
 const seedDb = require('./seed.js');
 const BlogRoutes = require('./routes/blog.js')
+const ReviewRoutes = require('./routes/review.js')
 const engine = require('ejs-mate');
 const methodOverride = require('method-override')
 
@@ -25,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public'))); // public folder
 app.use(express.urlencoded({ extended: true }))  // middleware for post request
 
 app.use(BlogRoutes); // so that har incoming request par check kiya jaye
-
+app.use(ReviewRoutes);
 
 
 app.get('/', (req, res) => {
@@ -33,7 +34,7 @@ app.get('/', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log('listening at port 8080');
+    console.log('listening at port 8000');
 })
 
 

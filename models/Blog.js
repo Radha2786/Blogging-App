@@ -16,7 +16,13 @@ const blogSchema = new mongoose.Schema({
     desc: {
         type:String,
         trim:true
-    }
+    },
+    reviews:[
+        {
+        type:mongoose.Schema.Types.ObjectId,
+        ref:'Review'
+        }
+    ]
 })
 let Blog = mongoose.model('Blog' , blogSchema);
 module.exports = Blog;
