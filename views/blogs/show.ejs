@@ -94,9 +94,9 @@
                                 <%=review.createdAt.toDateString()%>
                                     <% } %>
                         </p>
-
-                        <a href="#" class="btn btn-primary"
-                            style="background-color: #f5bd23; border-color: white;">Delete</a>
+                        <form action="/reviews/<%=foundblog._id%>/<%=review._id %>/?_method=DELETE" method="POST">
+                            <button class="btn btn-sm " style="background-color: rgb(231, 165, 95); border-color:white;">DELET</button>
+                        </form>
                     </div>
                 </div>
                 <% } %>

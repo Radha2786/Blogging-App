@@ -3,26 +3,50 @@
 
         <div class="row mt-3em;">
             <div class="col-6 mx-auto">
-                <form action="/blogs/<%=foundblog._id%>?_method=PATCH" method="POST">
+                <form class="needs-validation" novalidate action="/blogs/<%=foundblog._id%>?_method=PATCH" method="POST">
                     <div class="mb-3">
                         <label for="Title">Title: </label>
                         <input type="text" id="Title" class="form-control" name="title" placeholder="Title of the blog"
                             value="<%=foundblog.title%>" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please fill the required field.
+                            </div>
                     </div>
                     <div class="mb-3">
                         <label for="Img">Image: </label>
                         <input type="text" id="Img" class="form-control" name="img" placeholder="Image of the blog"
                             value="<%=foundblog.img%>" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please fill the required field.
+                            </div>
                     </div>
                     <div class="mb-3">
                         <label for="Author" class="form-label">Author: </label>
                         <input type="text" id="Author" class="form-control" name="author"
                             placeholder="Author of the blog" value="<%=foundblog.author%>" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please fill the required field.
+                            </div>
                     </div>
                     <div class="mb-3">
                         <label for="Desc">Description: </label>
                         <textarea id="Desc" name="desc" placeholder="Description of the blog" rows="5" cols="100"
                             required><%=foundblog.desc%></textarea>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please fill the required field.
+                            </div>
                     </div>
                     <button class="btn btn-sm btn-success" type="submit">Edit Blog</button>
 

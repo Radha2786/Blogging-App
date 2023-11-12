@@ -15,6 +15,29 @@ res.redirect(`/blogs/${id}`);
 
 })
 
+// router.delete('/reviews/:id',async(req,res)=>{
+//     let {id} = req.params;
+//     console.log(id);
+//     const blog =await Blog.findById(id);
+//     console.log(blog);
+//     Review.deleteMany({_id:{$in:blog.reviews}})
+//     await Review.findByIdAndDelete(id);
+//     res.redirect(`/blogs/${id}`);
+// })
+
+router.delete('/reviews/:blogid/:reviewId',async(req,res)=>{
+    console.log('inside review route');
+    let {blogid,reviewid} = req.params;
+    const blog =await Blog.findById(blogid);
+    console.log(blog);
+    const review= await Review.findById(reviewid);
+    console.log(review);
+    console.log('printing reviewid',reviewid);
+    const deletedReview = await Review.findByIdAndDelete(reviewid);
+    console.log(deletedReview);
+    res.redirect(`/blogs/${blogid}`);
+})
+
 
 
 
