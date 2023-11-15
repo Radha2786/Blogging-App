@@ -3,7 +3,7 @@
 
         <div class="row mt-3em;">
             <div class="col-6 mx-auto">
-                <form class="needs-validation" novalidate action="/blogs" method="POST">
+                <form class="needs-validation" name="form1"  novalidate action="/blogs" method="POST"  onsubmit=" return allLetter(document.form1.title,document.form1.author)">
                     <div class="mb-3">
                         <label for="Title">Title: </label>
                         <input type="text" id="Title" class="form-control" name="title" placeholder="Title of the blog"

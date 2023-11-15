@@ -1,6 +1,8 @@
 const express = require('express');
 const Blog = require('../models/Blog');
 const router = express.Router() //mini instance
+const Joi = require('joi');
+const {validateblog} = require('../middleware')
 
 
 router.get('/blogs' , async(req,res)=>{
@@ -24,7 +26,7 @@ router.get('/blogs/new',(req,res)=>{
 })
 
 // to actually add the product
-router.post('/blogs' , async(req,res)=>{
+router.post('/blogs' , validateblog, async(req,res)=>{
     try{
         console.log('working on post request');
         // console.log(req.body);
@@ -64,7 +66,7 @@ router.get('/blogs/:id/edit', async(req,res)=>{
 })
 
 // to actually edit the data in db
-router.patch('/blogs/:id',async(req,res)=>{
+router.patch('/blogs/:id',validateblog, async(req,res)=>{
     try{
         let {id}= req.params;
         let {title,img,author,desc} = req.body;
