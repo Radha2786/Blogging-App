@@ -8,7 +8,7 @@ const {validateblog} = require('../middleware')
 router.get('/blogs' , async(req,res)=>{
     try{
         let items = await Blog.find({});
-        res.render('blogs/index' , {items});
+        res.render('blogs/index' , {items, msg:req.flash('success')});
     }catch(e){
         res.status(500).render('error',{err:e.message})
     }
@@ -32,6 +32,7 @@ router.post('/blogs' , validateblog, async(req,res)=>{
         // console.log(req.body);
         let {title , img , author , desc} = req.body;
         await Blog.create({title , img , author , desc})
+        req.flash('success', 'product added successfully');
         res.redirect('/blogs');
     }catch(e){
         res.status(500).render('error',{err:e.message})
@@ -46,9 +47,9 @@ router.get('/blogs/:id', async(req,res)=>{
     const {id}= req.params;
     // console.log(id);
     let foundblog = await Blog.findById(id).populate('reviews');
-    res.render('blogs/show',{foundblog});
+    res.render('blogs/show',{foundblog , msg:req.flash('success')})
     }catch(e){
-        res.status(500).render('error',{err:e.message})
+        res.status(500).render('error',{err:e.message});
     }
    
 })
@@ -71,6 +72,7 @@ router.patch('/blogs/:id',validateblog, async(req,res)=>{
         let {id}= req.params;
         let {title,img,author,desc} = req.body;
         await Blog.findByIdAndUpdate(id,{title,img,author,desc})
+        req.flash('success','blog edited successfully');
         res.redirect(`/blogs/${id}`);
     }catch(e){
         res.status(500).render('error',{err:e.message})
@@ -85,6 +87,7 @@ router.delete('/blogs/:id',async(req,res)=>{
         let {id} = req.params;
         const blog=await Blog.findById(id);
         await Blog.findByIdAndDelete(id);
+        req.flash('success','blog deleted successfully');
         res.redirect('/blogs');
     }catch{
         res.status(500).render('error',{err:e.message}) 

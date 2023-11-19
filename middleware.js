@@ -1,3 +1,5 @@
+// folder created for server side validation
+
 const {blogschema,reviewschema} = require('./schema');
 
 const validateblog = (req,res,next)=>{
