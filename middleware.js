@@ -22,4 +22,12 @@ const validatereview = (req,res,next)=>{
     next();
 }
 
-module.exports = { validateblog , validatereview }
+const isLoggedIn = (req,res,next)=>{
+    if(!req.isAuthenticated()){
+        req.flash('error', 'please login first')
+        return res.redirect('/login');
+    }
+    next();
+}
+
+module.exports = { validateblog , validatereview ,isLoggedIn}

@@ -37,12 +37,12 @@ router.delete('/reviews/:blogid/:reviewId', async (req, res) => {
     console.log('inside review route');
     let { blogid, reviewid } = req.params;
     const blog = await Blog.findById(blogid);
-    console.log(blog);
+    // console.log(blog);
     const review = await Review.findById(reviewid);
-    console.log(review);
-    console.log('printing reviewid', reviewid);
+    // console.log(review);
+    // console.log('printing reviewid', reviewid);
     const deletedReview = await Review.findByIdAndDelete(reviewid);
-    console.log(deletedReview);
+    // console.log(deletedReview);
     res.redirect(`/blogs/${blogid}`);
 })
 
