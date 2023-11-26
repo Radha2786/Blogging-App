@@ -13,5 +13,3 @@ userSchema.plugin(passportLocalMongoose);   // passport local mongoose jitne bhi
 
 let User = mongoose.model('User' , userSchema);
 module.exports = User;
-
-// we have added time stamp class to add the date and tym. it will return created time and updated tym.

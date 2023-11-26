@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const express = require('express');
 const app = express();
 const port = 8080;
@@ -31,7 +33,12 @@ mongoose.connect('mongodb://127.0.0.1:27017/Blogging-App').then(() => {
 let configSession = {
     secret: 'keyboard cat',
     resave: false,
-    saveUninitialized: true
+    saveUninitialized: true,
+    cookie :{
+        httpOnly: true,
+        expires: Date.now() + 24*7*60*60*1000,
+        maxAge: 24*7*60*60*1000
+    }
 }
 
 
@@ -45,14 +52,7 @@ app.use(express.static(path.join(__dirname, 'public'))); // public folder
 app.use(express.urlencoded({ extended: true }))  // middleware for post request
 
 app.use(session(configSession)); 
-app.use(flash());
 
-// middleware for flash msgs so that we don't need to write flash msgs in every file
-app.use((req,res,next)=>{
-    res.locals.success = req.flash('success');
-    res.locals.error = req.flash('error');
-    next();
-})
 
 app.use(passport.session());
 app.use(passport.initialize());
@@ -60,9 +60,15 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+app.use(flash());
 
-
-
+// middleware for flash msgs so that we don't need to write flash msgs in every file
+app.use((req,res,next)=>{
+    res.locals.currentUser = req.user;
+    res.locals.success = req.flash('success');
+    res.locals.error = req.flash('error');
+    next();
+})
 
 
 
