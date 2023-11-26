@@ -2,9 +2,9 @@ const express = require('express');
 const router = express.Router() //mini instance
 const Blog = require('../models/Blog');
 const Review = require('../models/Review');
-const {validatereview} = require('../middleware');
+const {validatereview,isLoggedIn} = require('../middleware');
 
-router.post('/blogs/:id/review', validatereview,async (req, res) => {
+router.post('/blogs/:id/review',isLoggedIn, validatereview,async (req, res) => {
     try {
         const { id } = req.params;
         const blog = await Blog.findById(id);
@@ -33,8 +33,7 @@ router.post('/blogs/:id/review', validatereview,async (req, res) => {
 //     res.redirect(`/blogs/${id}`);
 // })
 
-router.delete('/reviews/:blogid/:reviewId', async (req, res) => {
-    console.log('inside review route');
+router.delete('/reviews/:blogid/:reviewId', isLoggedIn,async (req, res) => {
     let { blogid, reviewid } = req.params;
     const blog = await Blog.findById(blogid);
     console.log(blog);
