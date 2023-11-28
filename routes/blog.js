@@ -2,10 +2,10 @@ const express = require('express');
 const Blog = require('../models/Blog');
 const router = express.Router() //mini instance
 const Joi = require('joi');
-const {validateblog} = require('../middleware')
+const {validateblog,isLoggedIn} = require('../middleware')
 
 
-router.get('/blogs' , async(req,res)=>{
+router.get('/blogs' ,isLoggedIn, async(req,res)=>{
     try{
         let items = await Blog.find({});
         res.render('blogs/index' , {items, msg:req.flash('success')});
@@ -16,7 +16,7 @@ router.get('/blogs' , async(req,res)=>{
 })
 
 // to show form for the new blogs
-router.get('/blogs/new',(req,res)=>{
+router.get('/blogs/new',isLoggedIn,(req,res)=>{
     try{
         res.render('blogs/new');
     }catch{
@@ -26,7 +26,7 @@ router.get('/blogs/new',(req,res)=>{
 })
 
 // to actually add the product
-router.post('/blogs' , validateblog, async(req,res)=>{
+router.post('/blogs' , isLoggedIn,validateblog, async(req,res)=>{
     try{
         console.log('working on post request');
         // console.log(req.body);
@@ -41,7 +41,7 @@ router.post('/blogs' , validateblog, async(req,res)=>{
 })
 
 // to show a particular product
-router.get('/blogs/:id', async(req,res)=>{
+router.get('/blogs/:id', isLoggedIn,async(req,res)=>{
     try{
          // console.log('inside show route');
     const {id}= req.params;
@@ -55,7 +55,7 @@ router.get('/blogs/:id', async(req,res)=>{
 })
 
 // form to edit a product
-router.get('/blogs/:id/edit', async(req,res)=>{
+router.get('/blogs/:id/edit',isLoggedIn, async(req,res)=>{
     try{
         const {id} = req.params;
         let foundblog = await Blog.findById(id);
@@ -67,7 +67,7 @@ router.get('/blogs/:id/edit', async(req,res)=>{
 })
 
 // to actually edit the data in db
-router.patch('/blogs/:id',validateblog, async(req,res)=>{
+router.patch('/blogs/:id',isLoggedIn,validateblog, async(req,res)=>{
     try{
         let {id}= req.params;
         let {title,img,author,desc} = req.body;
@@ -82,7 +82,7 @@ router.patch('/blogs/:id',validateblog, async(req,res)=>{
 
 //  to delete the data from db
 
-router.delete('/blogs/:id',async(req,res)=>{
+router.delete('/blogs/:id',isLoggedIn,async(req,res)=>{
     try{
         let {id} = req.params;
         const blog=await Blog.findById(id);
